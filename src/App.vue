@@ -8,12 +8,12 @@
 
 	<div>
 		<figure class="my-photo">
-			<a href="https://www.ferditarakci.com" aria-label="Web Developer Ferdi Tarakcı">
-				<img alt="Web Developer Ferdi Tarakcı" src="./assets/images/my.jpg" width="531" height="531" />
+			<a href="https://www.ferditarakci.com" :aria-label="title">
+				<img :alt="title" src="./assets/images/my.jpg" width="531" height="531" />
 			</a>
 		</figure>
 
-		<h1><a href="https://www.ferditarakci.com" aria-label="Web Developer Ferdi Tarakcı">Ferdi Tarakcı</a></h1>
+		<h1><a href="https://www.ferditarakci.com" :aria-label="title">Ferdi Tarakcı</a></h1>
 
 		<h2>Web Developer | Doğasever | Hayvansever</h2>
 
@@ -21,7 +21,7 @@
 
 		<p>Şimdilerde Digidea Agency'de Front End Developer pozisyonunda tam zamanlı olarak çalışıyorum.</p>
 
-		<Socials />
+		<Socials :myTitle="title" />
 	</div>
 </template>
 
@@ -30,9 +30,16 @@ import Socials from "./components/Socials";
 
 export default {
 	name: "App",
+
 	components: {
 		Socials,
 	},
+
+	data() {
+		return {
+			title: 'Web Developer Ferdi Tarakcı'
+		}
+	}
 };
 </script>
 
