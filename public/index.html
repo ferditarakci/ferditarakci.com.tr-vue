@@ -28,18 +28,18 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-	<title>Ferdi Tarakçı - Web Developer | Doğasever | Hayvansever</title>
-	<meta name="description" content="Merhaba, Ben Ferdi Tarakçı. 10 yılı aşkındır front-end ve back-end alanlarında web tabanlı yazılımlar geliştiriyorum.">
-	<meta name="keywords" content="ferdi tarakçı, web developer, front end developer, front end web developer, web tasarım, web tasarımcı, freelance web tasarım, web tasarım uzmanı, istanbul, psd to css, psd to html, xd to css, xd to html, figma to css, figma to html, sketch to css, sketch to html, wordpress uzmanı">
-	<link rel="canonical" href="https://www.ferditarakci.com.tr/">
+	<title><%= VUE_APP_SEO_TITLE %></title>
+	<meta name="description" content="<%= VUE_APP_SEO_DESCRIPTION %>">
+	<meta name="keywords" content="<%= VUE_APP_SEO_KEYWORDS %>">
+	<link rel="canonical" href="<%= VUE_APP_DOMAIN %>">
 
 	<meta property="og:locale" content="tr_TR">
 	<meta property="og:type" content="website">
-	<meta property="og:url" content="https://www.ferditarakci.com.tr/">
-	<meta property="og:site_name" content="Ferdi Tarakçı - Web Developer">
-	<meta property="og:title" content="Ferdi Tarakçı - Web Developer | Doğasever | Hayvansever">
-	<meta property="og:description" content="Merhaba, Ben Ferdi Tarakçı. 10 yılı aşkındır front-end ve back-end alanlarında web tabanlı yazılımlar geliştiriyorum.">
-	<meta property="og:image" content="https://www.ferditarakci.com.tr/assets/img/favicon/icon-512x512.png">
+	<meta property="og:url" content="<%= VUE_APP_DOMAIN %>">
+	<meta property="og:site_name" content="<%= VUE_APP_TITLE %>">
+	<meta property="og:title" content="<%= VUE_APP_SEO_TITLE %>">
+	<meta property="og:description" content="<%= VUE_APP_SEO_DESCRIPTION %>">
+	<meta property="og:image" content="<%= VUE_APP_DOMAIN %>/assets/img/favicon/icon-512x512.png">
 	<meta property="og:image:type" content="image/png">
 	<meta property="og:image:width" content="512">
 	<meta property="og:image:height" content="512">
@@ -47,13 +47,13 @@
 <body>
 	<div id="app"></div>
 
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23038491-6"></script>
-	<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','UA-23038491-6');</script>
-
-	<!-- Yandex.Metrika counter -->
-	<script type="text/javascript" > (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)}; m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}) (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym"); ym(39537365, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true, trackHash:true }); </script>
-	<noscript><div><img src="https://mc.yandex.ru/watch/39537365" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-	<!-- /Yandex.Metrika counter -->
+	<% if (process.env.NODE_ENV === 'production') { %>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23038491-6"></script>
+		<script>
+		window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','UA-23038491-6');
+		(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)}; m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}) (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym"); ym(39537365, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true, trackHash:true });
+		</script>
+		<noscript><div><img src="https://mc.yandex.ru/watch/39537365" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+	<% } %>
 </body>
 </html>

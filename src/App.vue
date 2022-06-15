@@ -3,17 +3,21 @@
 		preload="metadata"
 		width="1920"
 		height="1080"
-		muted autoplay loop playsinline webkit-playsinline
+		muted
+		autoplay
+		loop
+		playsinline
+		webkit-playsinline
 	></video>
 
 	<div>
 		<figure class="my-photo">
-			<a href="https://www.ferditarakci.com" :aria-label="title">
+			<a :href="domain" :aria-label="title">
 				<img :alt="title" src="./assets/images/my.jpg" width="531" height="531" />
 			</a>
 		</figure>
 
-		<h1><a href="https://www.ferditarakci.com" :aria-label="title">Ferdi Tarakcı</a></h1>
+		<h1><a :href="domain" :aria-label="title">Ferdi Tarakcı</a></h1>
 
 		<h2>Web Developer | Doğasever | Hayvansever</h2>
 
@@ -37,7 +41,8 @@ export default {
 
 	data() {
 		return {
-			title: 'Web Developer Ferdi Tarakcı'
+			title: process.env.VUE_APP_TITLE,
+			domain: process.env.VUE_APP_DOMAIN
 		}
 	}
 };
