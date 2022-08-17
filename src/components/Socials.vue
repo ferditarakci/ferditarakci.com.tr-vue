@@ -25,7 +25,8 @@
 </template>
 
 <script>
-import {ref, onMounted} from 'vue';
+import {ref, onMounted} from 'vue'
+import socials from '@/data/socials.json'
 
 export default {
 	name: "Socials",
@@ -33,17 +34,17 @@ export default {
 	props: ['myTitle'],
 
 	setup() {
-		const whatsapp = ref(null);
+		const whatsapp = ref(null)
 
 		onMounted(() => {
 			// Mobile cihazlarda whatsapp bağlantı scheme'sını değiştirerek direkt uygulamayı açtırmayı sağlıyoruz.
 			// https://api.whatsapp.com/send/?phone=905468312073?text=Merhaba! to whatsapp://send/?phone=905468312073&text=Merhaba!
 			if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile/.exec(navigator.userAgent)) {
-				let wp = whatsapp.value
+				const wp = whatsapp.value
 				wp.href = wp.href.replace(/(https:\/\/(web|api).whatsapp.com\/)/i, 'whatsapp://')
 				wp.removeAttribute('target')
 			}
-		});
+		})
 
 		return {
 			whatsapp
@@ -52,38 +53,7 @@ export default {
 
 	data() {
 		return {
-			socials: [
-				{
-					title: 'Github',
-					class: 'gh',
-					icon: 'fa-github',
-					link: 'https://github.com/ferditarakci'
-				},
-				{
-					title: 'Linkedin',
-					class: 'li',
-					icon: 'fa-linkedin',
-					link: 'https://www.linkedin.com/in/ferditarakci/'
-				},
-				{
-					title: 'Instagram',
-					class: 'in',
-					icon: 'fa-instagram',
-					link: 'https://www.instagram.com/webdeveloper_ferditarakci/'
-				},
-				{
-					title: 'Twitter',
-					class: 'tw',
-					icon: 'fa-twitter',
-					link: 'https://twitter.com/ferditarakci'
-				},
-				{
-					title: 'Facebook',
-					class: 'fb',
-					icon: 'fa-facebook-f',
-					link: 'https://www.facebook.com/WebDeveloperFerdiTarakci/'
-				}
-			]
+			socials
 		}
 	},
 
@@ -92,5 +62,5 @@ export default {
 			return `${this.myTitle}, ${a}`
 		}
 	}
-};
+}
 </script>

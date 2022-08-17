@@ -1,5 +1,5 @@
 <template>
-	<video src="./assets/video/freelance-front-end-developer.mp4"
+	<video :src="video"
 		preload="metadata"
 		width="1920"
 		height="1080"
@@ -13,11 +13,19 @@
 	<div>
 		<figure class="my-photo">
 			<a :href="domain" :aria-label="title">
-				<img :alt="title" src="./assets/images/my.jpg" width="531" height="531" />
+				<img :alt="title" :src="image" width="531" height="531">
+			</a>
+			<a
+				href="https://cv.ferditarakci.com.tr"
+				title="Ferdi Tarakçı Özgeçmiş"
+				aria-label="Ferdi Tarakçı Özgeçmiş"
+				class="cv" target="_blank"
+			>
+				<i class="fas fa-id-card"></i>
 			</a>
 		</figure>
 
-		<h1><a :href="domain" :aria-label="title">Ferdi Tarakcı</a></h1>
+		<h1><a :href="domain" :title="title" :aria-label="title">Ferdi Tarakcı</a></h1>
 
 		<h2>Web Developer | Doğasever | Hayvansever</h2>
 
@@ -30,22 +38,27 @@
 </template>
 
 <script>
-import Socials from "./components/Socials";
+import Socials from "./components/Socials"
 
 export default {
 	name: "App",
 
 	components: {
-		Socials,
+		Socials
 	},
 
 	data() {
+		const title = process.env.VUE_APP_TITLE
+		const domain = process.env.VUE_APP_DOMAIN
+
 		return {
-			title: process.env.VUE_APP_TITLE,
-			domain: process.env.VUE_APP_DOMAIN
+			title,
+			domain,
+			video: domain + '/assets/video/freelance-front-end-developer.mp4',
+			image: domain + '/assets/images/my.jpg'
 		}
 	}
-};
+}
 </script>
 
 <style lang="scss">

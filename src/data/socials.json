@@ -1,0 +1,32 @@
+[
+	{
+		"title": "Github",
+		"class": "gh",
+		"icon": "fa-github",
+		"link": "https://github.com/ferditarakci"
+	},
+	{
+		"title": "linkedin",
+		"class": "li",
+		"icon": "fa-linkedin",
+		"link": "https://www.linkedin.com/in/ferditarakci/"
+	},
+	{
+		"title": "Instagram",
+		"class": "in",
+		"icon": "fa-instagram",
+		"link": "https://www.instagram.com/ferditarakci/"
+	},
+	{
+		"title": "Twitter",
+		"class": "tw",
+		"icon": "fa-twitter",
+		"link": "https://twitter.com/ferditarakci"
+	},
+	{
+		"title": "E-Posta",
+		"class": "em",
+		"icon": "fas fa-envelope",
+		"link": "mailto:bilgi@ferditarakci.com.tr"
+	}
+]
