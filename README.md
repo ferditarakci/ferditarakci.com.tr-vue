@@ -1,4 +1,4 @@
-# ferditarakci.com.tr
+# ferditarakci.com.tr-vue
 
 #2021-12-31
 
